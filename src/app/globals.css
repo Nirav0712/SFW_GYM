@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #79B537;
+  --color-secondary: #000000;
+  --color-accent: #f5f5f5;
+
+  --font-sans: var(--font-outfit), var(--font-inter), sans-serif;
+  --font-athletic: var(--font-zen-dots), sans-serif;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+@keyframes stroke {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 120 600;
+  }
+
+  100% {
+    stroke-dashoffset: 720;
+    stroke-dasharray: 120 600;
+  }
+}
+
+.animate-stroke {
+  animation: stroke 4s linear infinite;
+  stroke-width: 5px;
+}
+
+@keyframes stroke-white {
+  0% {
+    stroke-dashoffset: 40;
+    stroke-dasharray: 40 40;
+  }
+
+  100% {
+    stroke-dashoffset: 120;
+    stroke-dasharray: 40 40;
+  }
+}
+
+@keyframes stroke-green {
+  0% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 40 40;
+  }
+
+  100% {
+    stroke-dashoffset: 80;
+    stroke-dasharray: 40 40;
+  }
+}
+
+.animate-stroke-white {
+  animation: stroke-white 2s linear infinite;
+  stroke-width: 1px;
+}
+
+.animate-stroke-green {
+  animation: stroke-green 2s linear infinite;
+  stroke-width: 1px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
