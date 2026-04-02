@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Dumbbell } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -13,9 +13,17 @@ const navLinks = [
   { name: "Contact", href: "/contact" },
 ];
 
+const branchLinks = [
+  { name: "Hirawadi", slug: "hirawadi", color: "#79B537" },
+  { name: "Maninagar", slug: "maninagar", color: "#FF6B35" },
+  { name: "Satellite", slug: "satellite", color: "#A78BFA" },
+  { name: "Bopal", slug: "bopal", color: "#F59E0B" },
+];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [branchesOpen, setBranchesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,20 +35,15 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out backdrop-blur-md ${scrolled
-        ? "bg-black/80 py-4 shadow-[0_10px_40px_rgba(0,0,0,0.4)] border-b border-primary/30"
-        : "bg-white/5 py-7 border-b border-transparent shadow-none"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out backdrop-blur-md ${
+        scrolled
+          ? "bg-black/80 py-4 shadow-[0_10px_40px_rgba(0,0,0,0.4)] border-b border-primary/30"
+          : "bg-white/5 py-7 border-b border-transparent shadow-none"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center gap-3 group">
-            {/* <div className="relative">
-              <div className="bg-primary p-2.5 rounded-sm transform group-hover:rotate-12 transition-all duration-500 shadow-lg shadow-primary/20">
-                <Dumbbell className="w-6 h-6 text-white" />
-              </div>
-              <div className="absolute -inset-1 bg-primary/20 blur opacity-0 group-hover:opacity-100 transition-opacity" />
-            </div> */}
             <span className="text-3xl font-athletic font-black tracking-[-1px] text-white uppercase italic">
               <img src="/sfwlogo.png" alt="sfwlogo" className="h-15 w-70" />
             </span>
@@ -52,13 +55,63 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-gray-600/90 hover:text-primary font-athletic text-xs uppercase tracking-[3px] transition-all relative group py-2 ${scrolled ? "text-white" : "text-gray-600/90"
-                  }`}
+                className={`hover:text-primary font-athletic text-xs uppercase tracking-[3px] transition-all relative group py-2 ${
+                  scrolled ? "text-white" : "text-gray-600/90"
+                }`}
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
+
+            {/* Branches Dropdown */}
+            <div className="relative group/branches">
+              <button
+                className={`hover:text-primary font-athletic text-xs uppercase tracking-[3px] transition-all relative py-2 flex items-center gap-1 ${
+                  scrolled ? "text-white" : "text-gray-600/90"
+                }`}
+              >
+                Branches
+                <svg
+                  className="w-3 h-3 transition-transform group-hover/branches:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                </svg>
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover/branches:w-full" />
+              </button>
+
+              {/* Dropdown panel */}
+              <div className="absolute top-full right-0 pt-3 opacity-0 invisible group-hover/branches:opacity-100 group-hover/branches:visible transition-all duration-200">
+                <div className="bg-black/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-3 min-w-[220px] shadow-2xl shadow-black/50">
+                  <Link
+                    href="/branches"
+                    className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors border-b border-white/10 mb-2"
+                  >
+                    <span className="text-xs font-black uppercase tracking-widest text-primary">
+                      All Branches
+                    </span>
+                  </Link>
+                  {branchLinks.map((b) => (
+                    <Link
+                      key={b.slug}
+                      href={`/branches/${b.slug}`}
+                      className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item"
+                    >
+                      <span
+                        className="w-2.5 h-2.5 rounded-full shrink-0"
+                        style={{ background: b.color }}
+                      />
+                      <span className="text-xs font-bold uppercase tracking-widest text-white/60 group-hover/item:text-white transition-colors">
+                        {b.name}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
 
             <Link
               href="/contact"
@@ -66,7 +119,7 @@ export default function Navbar() {
             >
               <div className="absolute inset-0 bg-primary translate-y-0 group-hover:-translate-y-full transition-transform duration-300 ease-out" />
               <div className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-              <span className="relative z-10 font-athletic text-sm font-black uppercase tracking-[2px] text-black group-hover:text-white ">
+              <span className="relative z-10 font-athletic text-sm font-black uppercase tracking-[2px] text-black group-hover:text-white">
                 Join Now
               </span>
             </Link>
@@ -108,6 +161,58 @@ export default function Navbar() {
                   </Link>
                 </motion.div>
               ))}
+
+              {/* Mobile Branches accordion */}
+              <motion.div
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: navLinks.length * 0.1 }}
+              >
+                <button
+                  onClick={() => setBranchesOpen(!branchesOpen)}
+                  className="w-full flex items-center justify-between px-8 py-5 text-lg font-athletic font-black uppercase tracking-[4px] text-white hover:bg-primary/10 hover:text-primary border-l-4 border-transparent hover:border-primary transition-all"
+                >
+                  Branches
+                  <svg
+                    className={`w-4 h-4 mr-2 transition-transform ${branchesOpen ? "rotate-180" : ""}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <AnimatePresence>
+                  {branchesOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden bg-white/5"
+                    >
+                      <Link
+                        href="/branches"
+                        className="block px-12 py-3 text-sm font-bold uppercase tracking-[3px] text-primary hover:text-white transition-colors"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        → All Branches
+                      </Link>
+                      {branchLinks.map((b) => (
+                        <Link
+                          key={b.slug}
+                          href={`/branches/${b.slug}`}
+                          className="flex items-center gap-3 px-12 py-3 text-sm font-bold uppercase tracking-[3px] text-white/50 hover:text-white transition-colors"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          <span className="w-2 h-2 rounded-full shrink-0" style={{ background: b.color }} />
+                          {b.name}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+
               <div className="px-8 mt-6">
                 <Link
                   href="/contact"
