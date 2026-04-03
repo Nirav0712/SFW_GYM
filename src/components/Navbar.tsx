@@ -9,15 +9,15 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Programs", href: "/programs" },
-  { name: "Pricing", href: "/pricing" },
+  // { name: "Pricing", href: "/pricing" },
   { name: "Contact", href: "/contact" },
 ];
 
 const branchLinks = [
   { name: "Hirawadi", slug: "hirawadi", color: "#79B537" },
   { name: "Maninagar", slug: "maninagar", color: "#FF6B35" },
-  { name: "Satellite", slug: "satellite", color: "#A78BFA" },
-  { name: "Bopal", slug: "bopal", color: "#F59E0B" },
+  // { name: "Satellite", slug: "satellite", color: "#A78BFA" },
+  // { name: "Bopal", slug: "bopal", color: "#F59E0B" },
 ];
 
 export default function Navbar() {
@@ -35,11 +35,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out backdrop-blur-md ${
-        scrolled
-          ? "bg-black/80 py-4 shadow-[0_10px_40px_rgba(0,0,0,0.4)] border-b border-primary/30"
-          : "bg-white/5 py-7 border-b border-transparent shadow-none"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-in-out backdrop-blur-md ${scrolled
+        ? "bg-black/80 py-4 shadow-[0_10px_40px_rgba(0,0,0,0.4)] border-b border-primary/30"
+        : "bg-white/5 py-7 border-b border-transparent shadow-none"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center">
@@ -55,9 +54,8 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`hover:text-primary font-athletic text-xs uppercase tracking-[3px] transition-all relative group py-2 ${
-                  scrolled ? "text-white" : "text-gray-600/90"
-                }`}
+                className={`hover:text-primary font-athletic text-xs uppercase tracking-[3px] transition-all relative group py-2 ${scrolled ? "text-white" : "text-gray-600/90"
+                  }`}
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full" />
@@ -67,9 +65,8 @@ export default function Navbar() {
             {/* Branches Dropdown */}
             <div className="relative group/branches">
               <button
-                className={`hover:text-primary font-athletic text-xs uppercase tracking-[3px] transition-all relative py-2 flex items-center gap-1 ${
-                  scrolled ? "text-white" : "text-gray-600/90"
-                }`}
+                className={`hover:text-primary font-athletic text-xs uppercase tracking-[3px] transition-all relative py-2 flex items-center gap-1 ${scrolled ? "text-white" : "text-gray-600/90"
+                  }`}
               >
                 Branches
                 <svg
