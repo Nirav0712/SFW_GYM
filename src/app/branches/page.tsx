@@ -7,6 +7,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TextBorder from "@/components/TextBorder";
 import { branches } from "@/lib/branches";
+import Cards from "@/components/Cards";
+
 
 export default function BranchesPage() {
   return (
@@ -89,6 +91,8 @@ export default function BranchesPage() {
         </div>
       </section>
 
+
+
       {/* Branches Grid */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -99,7 +103,7 @@ export default function BranchesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group relative rounded-[2rem] overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-500 bg-white/5"
+              className="group relative rounded-[2rem] overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-500 bg-[#09090a]"
             >
               {/* Top gradient accent */}
               <div
@@ -220,7 +224,7 @@ export default function BranchesPage() {
 
       {/* Map Section Teaser */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="glass rounded-[3rem] p-12 text-center relative overflow-hidden">
+        <div className="bg-[#09090a] border border-white/10 rounded-[3rem] p-12 text-center relative overflow-hidden">
           <div className="absolute top-0 right-0 w-80 h-80 bg-primary/10 blur-[120px]" />
           <div className="absolute bottom-0 left-0 w-60 h-60 bg-primary/5 blur-[100px]" />
           <motion.div
@@ -254,9 +258,12 @@ export default function BranchesPage() {
           </motion.div>
         </div>
       </section>
+      <Cards />
 
       <TextBorder />
+
       <Footer />
+
     </main>
   );
 }

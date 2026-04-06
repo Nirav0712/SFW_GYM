@@ -15,7 +15,7 @@ const navLinks = [
 
 const branchLinks = [
   { name: "Hirawadi", slug: "hirawadi", color: "#79B537" },
-  { name: "Maninagar", slug: "maninagar", color: "#FF6B35" },
+  { name: "Maninagar", slug: "maninagar", color: "#79B537" },
   // { name: "Satellite", slug: "satellite", color: "#A78BFA" },
   // { name: "Bopal", slug: "bopal", color: "#F59E0B" },
 ];

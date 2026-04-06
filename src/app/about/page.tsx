@@ -64,20 +64,20 @@ export default function AboutPage() {
                 <h2 className="text-primary font-bold uppercase tracking-widest">Our Mission</h2>
                 <h3 className="text-5xl font-black font-outfit leading-tight">MORE THAN JUST A GYM, A MOVEMENT</h3>
                 <p className="text-white/60 text-lg leading-relaxed italic border-l-4 border-primary pl-6 grow">
-                  "At SFW Hirawadi Gym, our mission is to empower individuals to reach their peak physical and mental potential through world-class training and unwavering support."
+                  "At SFW Hirawadi Gym, our mission is to provide a structured and results-driven fitness environment that empowers individuals to achieve their health and performance goals with confidence."
                 </p>
                 <p className="text-white/60 text-lg leading-relaxed">
-                  Founded with a passion for fitness excellence, we've grown from a local fitness center to a hub for transformation. We believe that everyone deserves access to the best equipment and the most knowledgeable guidance.
+            Our focus is to help members in Hirawadi Ahmedabad build strength, improve endurance, and develop sustainable fitness habits that lead to long-term transformation. We believe that fitness is not a temporary goal, but a lifelong commitment to better health and self-improvement.
                 </p>
               </div>
 
               <div className="space-y-4">
-                <h4 className="text-2xl font-bold font-outfit">What sets us apart:</h4>
+                <h4 className="text-2xl font-bold font-outfit">We are committed to delivering:</h4>
                 <ul className="space-y-3">
                   {[
-                    "International Standard Equipment",
-                    "Scientific Training Methodology",
-                    "Personalized Nutrition Coaching",
+                    "Expert-led training programs",
+                    "Personalized fitness guidance",
+                    "A disciplined and motivating atmosphere",
                     "Inclusive Community Atmosphere",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-3">
