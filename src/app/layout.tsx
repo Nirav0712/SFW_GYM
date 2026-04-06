@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable} ${zenDots.variable}`}>
+    <html lang="en" className={`${inter.variable} ${outfit.variable} ${zenDots.variable}`} suppressHydrationWarning>
       <body className="antialiased">
         {children}
       </body>

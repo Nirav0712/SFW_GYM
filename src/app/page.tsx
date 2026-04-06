@@ -2,14 +2,18 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useEffect } from "react";
+import LocomotiveScroll from "locomotive-scroll";
 import { motion } from "framer-motion";
 import { Dumbbell, Users, Trophy, Target, ArrowRight, Play, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import HeroSection from "@/components/HeroSection";
 import OurProcess from "@/components/OurProcess";
 import OurTrainers from "@/components/OurTrainers";
 import TextBorder from "@/components/TextBorder";
+import Gallery from "@/components/Gallery";
 
 const stats = [
   { label: "Active Members", value: "500+", icon: Users },
@@ -49,11 +53,20 @@ const features = [
 ];
 
 export default function Home() {
+  const router = useRouter();
+  useEffect(() => {
+    const scroll = new LocomotiveScroll();
+    return () => {
+      scroll.destroy();
+    };
+  }, []);
+
   return (
     <main className="bg-black text-white selection:bg-primary selection:text-white">
       <Navbar />
 
       <HeroSection />
+      {/* <Gallery /> */}
 
       {/* Stats Section */}
       <section className="py-24 relative z-20 -mt-20">
@@ -114,7 +127,7 @@ export default function Home() {
                 ))}
               </div>
 
-              <button className="bg-white text-black px-10 py-5 rounded-2xl font-black hover:bg-primary hover:text-white transition-all transform hover:scale-105">
+              <button onClick={() => router.push("/about")} className="bg-white text-black px-10 py-5 rounded-2xl font-black hover:bg-primary hover:text-white transition-all transform hover:scale-105">
                 LEARN MORE
               </button>
             </div>
@@ -122,6 +135,7 @@ export default function Home() {
         </div>
       </section>
 
+      <Gallery />
       <OurTrainers />
 
       {/* Programs Section */}
