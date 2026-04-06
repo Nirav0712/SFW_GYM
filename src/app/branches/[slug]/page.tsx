@@ -12,8 +12,11 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TextBorder from "@/components/TextBorder";
+import SectionHeading from "@/components/SectionHeading";
+import Wsa from "@/components/Wsa";
 import { branches, getBranchBySlug } from "@/lib/branches";
 import { use } from "react";
+
 
 // ─── Star Rating ──────────────────────────────────────────────────────────────
 function StarRating({ rating, accentColor }: { rating: number; accentColor: string }) {
@@ -31,52 +34,7 @@ function StarRating({ rating, accentColor }: { rating: number; accentColor: stri
   );
 }
 
-// ─── Section Heading ──────────────────────────────────────────────────────────
-function SectionHeading({
-  label,
-  title,
-  subtitle,
-  accentColor,
-}: {
-  label: string;
-  title: string;
-  subtitle?: string;
-  accentColor: string;
-}) {
-  return (
-    <div className="text-center mb-16">
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="font-bold uppercase tracking-[6px] text-sm mb-4"
-        style={{ color: accentColor }}
-      >
-        {label}
-      </motion.p>
-      <motion.h2
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
-        className="text-5xl md:text-6xl font-black font-outfit uppercase leading-tight"
-      >
-        {title}
-      </motion.h2>
-      {subtitle && (
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="text-white/50 text-lg mt-5 max-w-2xl mx-auto"
-        >
-          {subtitle}
-        </motion.p>
-      )}
-    </div>
-  );
-}
+
 
 // ─── Page Component ────────────────────────────────────────────────────────────
 export default function BranchPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -231,9 +189,8 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5 + i * 0.1 }}
-                  className="rounded-2xl p-6 border transition-all duration-300 hover:scale-105"
+                  className="rounded-2xl p-6 border transition-all duration-300 hover:scale-105 bg-[#09090a]"
                   style={{
-                    background: `rgba(${acRgb},0.08)`,
                     borderColor: `rgba(${acRgb},0.2)`,
                   }}
                 >
@@ -293,9 +250,8 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="rounded-2xl p-6 border"
+                  className="rounded-2xl p-6 border bg-[#09090a]"
                   style={{
-                    background: `rgba(${acRgb},0.06)`,
                     borderColor: `rgba(${acRgb},0.2)`,
                   }}
                 >
@@ -315,7 +271,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
             className="lg:col-span-2 space-y-4 sticky top-28"
           >
             {/* Hours */}
-            <div className="rounded-2xl p-6 border border-white/10 bg-white/5">
+            <div className="rounded-2xl p-6 border border-white/10 bg-[#09090a]">
               <h4 className="font-black text-lg mb-5 flex items-center gap-2">
                 <Clock className="w-5 h-5" style={{ color: ac }} /> Opening Hours
               </h4>
@@ -334,7 +290,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
             </div>
 
             {/* Contact */}
-            <div className="rounded-2xl p-6 border border-white/10 bg-white/5">
+            <div className="rounded-2xl p-6 border border-white/10 bg-[#09090a]">
               <h4 className="font-black text-lg mb-5 flex items-center gap-2">
                 <PhoneIcon className="w-5 h-5" style={{ color: ac }} /> Contact
               </h4>
@@ -365,7 +321,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
             </div>
 
             {/* Membership Pricing */}
-            <div className="rounded-2xl p-6 border" style={{ borderColor: `rgba(${acRgb},0.3)`, background: `rgba(${acRgb},0.06)` }}>
+            <div className="rounded-2xl p-6 border bg-[#09090a]" style={{ borderColor: `rgba(${acRgb},0.3)` }}>
               <h4 className="font-black text-lg mb-5 flex items-center gap-2">
                 <Star className="w-5 h-5" style={{ color: ac }} /> Membership Plans
               </h4>
@@ -394,41 +350,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
       </section>
 
       {/* ── 3. FEATURES ──────────────────────────────────────────────────── */}
-      <section className="py-32" style={{ background: "rgba(255,255,255,0.02)" }}>
-        <div className="max-w-7xl mx-auto px-6">
-          <SectionHeading
-            label="World-Class Facilities"
-            title="WHAT SETS US APART"
-            subtitle={`Everything you need to train harder, recover faster, and progress further — all under one roof at SFW ${branch.name}.`}
-            accentColor={ac}
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {branch.features.map((f, i) => (
-              <motion.div
-                key={f.title}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="rounded-2xl p-8 group cursor-default border border-white/5 hover:border-white/10 transition-all duration-300"
-                style={{ background: "rgba(255,255,255,0.04)" }}
-              >
-                <div
-                  className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 text-2xl group-hover:scale-110 transition-transform duration-300"
-                  style={{ background: `rgba(${acRgb},0.15)`, border: `1px solid rgba(${acRgb},0.25)` }}
-                >
-                  <Zap className="w-6 h-6" style={{ color: ac }} />
-                </div>
-                <h3 className="text-xl font-black mb-3 group-hover:text-white transition-colors" style={{ color: ac }}>
-                  {f.title}
-                </h3>
-                <p className="text-white/55 leading-relaxed text-sm">{f.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Wsa branch={branch} ac={ac} acRgb={acRgb} />
 
       {/* ── 4. PROGRAMS ──────────────────────────────────────────────────── */}
       <section className="py-32 max-w-7xl mx-auto px-6">
@@ -438,48 +360,97 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
           subtitle="Every program is backed by science, coached by certified professionals, and tailored to your goals."
           accentColor={ac}
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {branch.programs.map((p, i) => (
-            <motion.div
-              key={p.title}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="group rounded-2xl p-8 border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/8 transition-all duration-300 relative overflow-hidden"
+
+        <div className="services-wrap flex flex-col xl:flex-row gap-6 mt-16">
+          {branch.programs.map((svc, i) => (
+            <div
+              key={i}
+              className="service-card group relative h-[550px] flex-1 overflow-hidden rounded-[28px] cursor-pointer transition-all duration-500 ease-in-out bg-black"
             >
-              <div
-                className="absolute top-0 left-0 w-1 h-full opacity-0 group-hover:opacity-100 transition-opacity"
-                style={{ background: ac }}
-              />
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h3 className="text-xl font-black mb-1">{p.title}</h3>
-                  <div className="flex gap-3 text-xs">
-                    <span
-                      className="px-3 py-1 rounded-full font-medium"
-                      style={{ background: `rgba(${acRgb},0.15)`, color: ac }}
+              {/* Content Wrapper */}
+              <div className="absolute inset-0 transition-all duration-500 ease-in-out group-hover:inset-3 overflow-hidden rounded-[28px] group-hover:rounded-[22px]">
+                {/* Background Image - Rotating through gallery and heroImage */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-105"
+                  style={{
+                    backgroundImage: `url(${i % 2 === 0 ? (branch.gallery[0] || branch.heroImage) : (branch.gallery[1] || branch.heroImage)})`,
+                    backgroundPosition: "center",
+                  }}
+                />
+
+                {/* Gradient Overlay - Always subtle, darkens on hover */}
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
+
+                {/* Arrow Button Container */}
+                <div className="absolute top-0 right-0 z-30 ">
+                  <div className="absolute top-0 right-0 w-25 h-25 bg-black rounded-bl-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative p-4">
+                    <div
+                      className="box-border flex h-16 w-16 items-center justify-center rounded-full text-white transition-all duration-300 group-hover:scale-95 group-hover:rotate-12"
+                      style={{
+                        background: `linear-gradient(135deg, rgba(${acRgb},0.8) 0%, rgba(${acRgb},0.6) 45%, ${ac} 100%)`,
+                      }}
                     >
-                      {p.duration}
-                    </span>
-                    <span className="px-3 py-1 rounded-full bg-white/10 text-white/50 font-medium">
-                      {p.level}
-                    </span>
+                      <span className="text-[28px] font-light leading-none -mt-0.5">↗</span>
+                    </div>
                   </div>
                 </div>
-                <Calendar className="w-6 h-6 text-white/20 group-hover:text-white/40 transition-colors" />
+
+                <div className="absolute left-0 right-0 bottom-0 z-20 px-0">
+                  <div
+                    className="mx-0 translate-y-16 group-hover:translate-y-0 transition-all duration-500 ease-in-out"
+                    style={{
+                      background: `linear-gradient(135deg, rgba(${acRgb},0.95) 0%, rgba(0,0,0,0.85) 60%, rgba(${acRgb},0.95) 100%)`,
+                      borderTopLeftRadius: "22px",
+                      borderTopRightRadius: "22px",
+                      borderBottomLeftRadius: "28px",
+                      borderBottomRightRadius: "28px",
+                      backdropFilter: "blur(12px)",
+                    }}
+                  >
+                    <div className="px-8 py-10">
+                      {/* Tags & Title - Always visible */}
+                      <div className="flex gap-2 mb-4 justify-center">
+                        <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/20 text-white">
+                          {svc.duration}
+                        </span>
+                        <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border border-white/20 text-white/70">
+                          {svc.level}
+                        </span>
+                      </div>
+
+                      <h3 className="text-white text-[24px] text-center font-black uppercase leading-tight mb-3">
+                        {svc.title}
+                      </h3>
+
+                      {/* Description - Fades in on hover */}
+                      <p className="text-white/70 text-[14px] font-medium text-center line-clamp-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                        {svc.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <p className="text-white/55 leading-relaxed text-sm">{p.description}</p>
-              <div className="mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: ac }}>
-                Enquire Now <ArrowRight className="w-4 h-4" />
-              </div>
-            </motion.div>
+            </div>
           ))}
         </div>
+
+        <style jsx>{`
+          @media (min-width: 1280px) {
+            .services-wrap:hover .service-card {
+              flex: 0.85;
+            }
+
+            .services-wrap .service-card:hover {
+              flex: 1.35;
+            }
+          }
+        `}</style>
       </section>
 
+
       {/* ── 5. TRAINERS ──────────────────────────────────────────────────── */}
-      <section className="py-32" style={{ background: "rgba(255,255,255,0.02)" }}>
+      <section className="py-32" style={{ background: "#000" }}>
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             label="Expert Coaching Staff"
@@ -495,7 +466,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group text-center rounded-2xl p-8 border border-white/10 hover:border-white/20 bg-white/5 transition-all duration-300"
+                className="group text-center rounded-2xl p-8 border border-white/10 hover:border-white/20 bg-[#09090a] transition-all duration-300"
               >
                 {/* Avatar */}
                 <div
@@ -529,7 +500,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="flex items-center gap-3 rounded-xl p-4 border border-white/8 bg-white/4 hover:bg-white/8 transition-all"
+              className="flex items-center gap-3 rounded-xl p-4 border border-white/8 bg-[#09090a] hover:bg-white/8 transition-all"
             >
               <CheckCircle2 className="w-5 h-5 shrink-0" style={{ color: ac }} />
               <span className="text-sm font-medium text-white/70">{a}</span>
@@ -545,7 +516,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
           </h3>
           <div className="flex flex-wrap gap-3">
             {branch.nearbyLandmarks.map((lm) => (
-              <span key={lm} className="px-4 py-2 rounded-full text-sm border border-white/10 text-white/50 bg-white/5">
+              <span key={lm} className="px-4 py-2 rounded-full text-sm border border-white/10 text-white/50 bg-[#09090a]">
                 {lm}
               </span>
             ))}
@@ -554,7 +525,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
       </section>
 
       {/* ── 7. TESTIMONIALS ──────────────────────────────────────────────── */}
-      <section className="py-32" style={{ background: "rgba(255,255,255,0.02)" }}>
+      <section className="py-32" style={{ background: "#000" }}>
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             label="Member Stories"
@@ -570,7 +541,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="rounded-2xl p-8 border border-white/10 bg-white/5 relative flex flex-col"
+                className="rounded-2xl p-8 border border-white/10 bg-[#09090a] relative flex flex-col"
               >
                 <div
                   className="absolute top-6 right-6 text-6xl font-serif leading-none opacity-20"
@@ -638,7 +609,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
 
       {/* ── 9. OTHER BRANCHES ────────────────────────────────────────────── */}
       <section className="py-20 max-w-7xl mx-auto px-6">
-        <div className="glass rounded-[2rem] p-10">
+        <div className=" ">
           <h3 className="text-2xl font-black mb-6">Explore Other Branches</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {branches
@@ -647,7 +618,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
                 <Link
                   key={b.slug}
                   href={`/branches/${b.slug}`}
-                  className="group rounded-xl p-5 border border-white/10 hover:border-white/20 bg-white/5 transition-all duration-300 hover:scale-105"
+                  className="group rounded-xl p-5 border border-white/10 hover:border-white/20  transition-all duration-300 hover:scale-105"
                 >
                   <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: b.accentColor }}>
                     Est. {b.establishedYear}
@@ -665,7 +636,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
 
       {/* ── 10. CTA ──────────────────────────────────────────────────────── */}
       <section className="py-32 px-6">
-        <div className="max-w-7xl mx-auto relative rounded-[3rem] overflow-hidden p-16 md:p-24 text-center glass">
+        <div className="max-w-7xl mx-auto relative rounded-[3rem] overflow-hidden p-16 md:p-24 text-center bg-[#09090a] border border-white/10">
           <div className="absolute top-0 right-0 w-80 h-80 blur-[150px] opacity-30" style={{ background: ac }} />
           <div className="absolute bottom-0 left-0 w-60 h-60 blur-[120px] opacity-20" style={{ background: ac }} />
           <div className="relative z-10">
