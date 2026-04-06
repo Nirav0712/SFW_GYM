@@ -10,7 +10,7 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Programs", href: "/programs" },
   // { name: "Pricing", href: "/pricing" },
-  { name: "Contact", href: "/contact" },
+  // { name: "Contact", href: "/contact" },
 ];
 
 const branchLinks = [
@@ -117,7 +117,7 @@ export default function Navbar() {
               <div className="absolute inset-0 bg-primary translate-y-0 group-hover:-translate-y-full transition-transform duration-300 ease-out" />
               <div className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
               <span className="relative z-10 font-athletic text-sm font-black uppercase tracking-[2px] text-black group-hover:text-white">
-                Join Now
+                Contact us
               </span>
             </Link>
           </div>

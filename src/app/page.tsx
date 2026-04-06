@@ -58,7 +58,7 @@ export default function Home() {
       {/* Stats Section */}
       <section className="py-24 relative z-20 -mt-20">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-20">
             {stats.map((stat, idx) => (
               <motion.div
                 key={stat.label}
@@ -84,9 +84,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col md:flex-row gap-20 items-center">
             <div className="flex-1 relative">
-              <div className="relative z-10 rounded-[4rem] overflow-hidden aspect-square border-8 border-white/5">
+              <div className="relative z-10 rounded-[4rem] overflow-hidden aspect-square">
                 <Image
-                  src="/images/gym-interior.png"
+                  src="/images/about-page.jpg"
                   alt="Gym Interior"
                   fill
                   className="object-cover"
@@ -101,7 +101,7 @@ export default function Home() {
                 <h2 className="text-primary font-bold uppercase tracking-widest">About Our Club</h2>
                 <h3 className="text-5xl font-black font-outfit leading-tight">WE PROVIDE THE BEST <br /> TRAINING FOR YOU</h3>
                 <p className="text-white/60 text-lg leading-relaxed">
-                  Success at SFW Hirawadi Gym is measured by your progress. We offer a holistic approach to fitness that combines science-based training, nutritional guidance, and an environment that keeps you focused.
+                  Success at SFW Gym is measured by your progress. We offer a holistic approach to fitness that combines science-based training, nutritional guidance, and an environment that keeps you focused.
                 </p>
               </div>
 

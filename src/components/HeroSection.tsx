@@ -149,7 +149,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
           >
-            <button className="mt-20 group relative overflow-hidden bg-primary text-white border-[3px] border-black px-20 py-8 font-athletic text-2xl font-black uppercase tracking-[10px] shadow-[0_20px_50px_rgba(121,181,55,0.3)] hover:shadow-primary/50 transition-all active:scale-95">
+            <button onClick={() => window.location.href = "/contact"} className="mt-20 group relative overflow-hidden bg-primary text-white border-[3px] border-black px-20 py-8 font-athletic text-2xl font-black uppercase tracking-[10px] shadow-[0_20px_50px_rgba(121,181,55,0.3)] hover:shadow-primary/50 transition-all active:scale-95">
               <span className="text-black group-hover:text-white relative z-10">JOIN NOW</span>
               <div className="absolute inset-0 bg-black -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
             </button>
