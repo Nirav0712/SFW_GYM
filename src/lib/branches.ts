@@ -60,6 +60,7 @@ export type Branch = {
   };
   mapEmbedUrl: string;
   testimonials: {
+    image: string;
     name: string;
     review: string;
     rating: number;
@@ -231,13 +232,39 @@ export const branches: Branch[] = [
     testimonials: [
       {
         name: "Amit Desai",
+        image: "/images/about-page.jpg",
         review:
           "I've been a member since 2018 and I can say without doubt — SFW Hirawadi changed my life. Lost 22kg in 6 months and ran my first half-marathon. The coaches here genuinely care about your progress.",
         rating: 5,
         duration: "Member since 2018",
       },
       {
+        name: "Amit Desai",
+        image: "/images/image.png",
+        review:
+          "I've been a member since 2018 and I can say without doubt — SFW Hirawadi changed my life. Lost 22kg in 6 months and ran my first half-marathon. The coaches here genuinely care about your progress.",
+        rating: 5,
+        duration: "Member since 2026",
+      },
+      {
+        name: "Amit Desai",
+        image: "/images/image.png",
+        review:
+          "I've been a member since 2018 and I can say without doubt — SFW Hirawadi changed my life. Lost 22kg in 6 months and ran my first half-marathon. The coaches here genuinely care about your progress.",
+        rating: 5,
+        duration: "Member since 2017",
+      },
+      {
+        name: "Amit Desai",
+        image: "/images/image.png",
+        review:
+          "I've been a member since 2018 and I can say without doubt — SFW Hirawadi changed my life. Lost 22kg in 6 months and ran my first half-marathon. The coaches here genuinely care about your progress.",
+        rating: 5,
+        duration: "Member since 2016",
+      },
+      {
         name: "Sonal Trivedi",
+        image: "/images/image.png",
         review:
           "The yoga studio is a hidden gem! I come every morning before work and it sets the tone for my entire day. The instructors are knowledgeable, patient, and incredibly motivating.",
         rating: 5,
@@ -245,6 +272,7 @@ export const branches: Branch[] = [
       },
       {
         name: "Vishal Rana",
+        image: "/images/image.png",
         review:
           "Best powerlifting setup in Ahmedabad, period. Where else will you find calibrated plates and a proper monolift rack in a commercial gym? Rajan bhai's coaching is world-class.",
         rating: 5,
@@ -254,6 +282,9 @@ export const branches: Branch[] = [
     gallery: ["/images/hero.png", "/images/athlete.png"],
     nearbyLandmarks: ["Hirawadi Circle", "Sabarmati River Front", "HP Petrol Pump", "Chandkheda Highway"],
   },
+
+
+
 
   {
     slug: "maninagar",
@@ -416,6 +447,7 @@ export const branches: Branch[] = [
     testimonials: [
       {
         name: "Pooja Sharma",
+        image: "/images/about-page.jpg",
         review:
           "As a woman, I was always uncomfortable in regular gyms. SFW Maninagar's women's floor completely changed that experience for me. I feel safe, motivated, and genuinely excited to come every day.",
         rating: 5,
@@ -423,6 +455,7 @@ export const branches: Branch[] = [
       },
       {
         name: "Jigar Vyas",
+        image: "/images/image.png",
         review:
           "CrossFit here is a completely different level. Deepak sir's coaching has transformed not just my fitness but how I approach challenges in life. The community keeps you accountable.",
         rating: 5,
@@ -430,6 +463,7 @@ export const branches: Branch[] = [
       },
       {
         name: "Kavya Modi",
+        image: "/images/image.png",
         review:
           "The express 45-minute HIIT sessions are a lifesaver! I have a 9-to-5 job and this is the only gym where I can walk in at 7 PM, crush a full workout, and be home by 8. Absolutely love it.",
         rating: 5,

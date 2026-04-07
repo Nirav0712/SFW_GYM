@@ -16,24 +16,8 @@ import SectionHeading from "@/components/SectionHeading";
 import Wsa from "@/components/Wsa";
 import { branches, getBranchBySlug } from "@/lib/branches";
 import { use } from "react";
-
-
-// ─── Star Rating ──────────────────────────────────────────────────────────────
-function StarRating({ rating, accentColor }: { rating: number; accentColor: string }) {
-  return (
-    <div className="flex gap-1">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star
-          key={i}
-          className="w-4 h-4"
-          fill={i < rating ? accentColor : "transparent"}
-          stroke={i < rating ? accentColor : "rgba(255,255,255,0.2)"}
-        />
-      ))}
-    </div>
-  );
-}
-
+import BranchTestimonial from "@/components/BranchTestimonial";
+import StarRating from "@/components/StarRating";
 
 
 // ─── Page Component ────────────────────────────────────────────────────────────
@@ -582,46 +566,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
       </section>
 
       {/* ── 6. AMENITIES ─────────────────────────────────────────────────── */}
-      {/* <section className="py-32 max-w-7xl mx-auto px-6">
-        <SectionHeading
-          label="Member Facilities"
-          title="EVERY COMFORT, COVERED"
-          subtitle="From locker rooms to premium recovery suites, SFW ensures your entire gym experience — not just the workout — is world-class."
-          accentColor={ac}
-        />
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-          {branch.amenities.map((a, i) => (
-            <motion.div
-              key={a}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="flex items-center gap-3 rounded-xl p-4 border border-white/8 bg-[#09090a] hover:bg-white/8 transition-all"
-            >
-              <CheckCircle2 className="w-5 h-5 shrink-0" style={{ color: ac }} />
-              <span className="text-sm font-medium text-white/70">{a}</span>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="mt-16">
-          <h3 className="font-black text-2xl mb-6 flex items-center gap-3">
-            <MapPin className="w-6 h-6" style={{ color: ac }} />
-            Nearby Landmarks
-          </h3>
-          <div className="flex flex-wrap gap-3">
-            {branch.nearbyLandmarks.map((lm) => (
-              <span key={lm} className="px-4 py-2 rounded-full text-sm border border-white/10 text-white/50 bg-[#09090a]">
-                {lm}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       <section className="py-28 max-w-7xl mx-auto px-6">
-
         <SectionHeading
           label="Member Facilities"
           title="EVERY COMFORT, COVERED"
@@ -629,50 +574,53 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
           accentColor={ac}
         />
 
-        {/* Amenities */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-14">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 mt-16">
+
           {branch.amenities.map((a, i) => (
             <motion.div
               key={a}
-              initial={{ opacity: 0, y: 40, scale: 0.85 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ delay: i * 0.07, type: "spring", stiffness: 120 }}
-              whileHover={{
-                rotateX: 6,
-                rotateY: -6,
-                scale: 1.06,
-              }}
-              className="group relative p-[1px] rounded-2xl bg-gradient-to-br from-white/20 via-transparent to-white/10"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.07 }}
+              viewport={{ once: true }}
+              className="group relative flex justify-center"
             >
-              {/* Inner Box */}
-              <div className="relative flex items-center gap-3 rounded-2xl p-5 
-        bg-[#0b0b0d]/90 backdrop-blur-xl border border-white/10
-        overflow-hidden transition-all duration-300">
 
-                {/* Animated Glow */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
-                  <div
-                    className="absolute inset-0 blur-2xl"
-                    style={{ backgroundColor: ac, opacity: 0.25 }}
+              <div className="relative flex flex-col items-center gap-3 cursor-pointer">
+
+                {/* layered spans (isometric effect) */}
+                <span className="absolute w-14 h-14 rounded-full border opacity-0 group-hover:opacity-20 transition"
+                  style={{ borderColor: ac }} />
+
+                <span className="absolute w-14 h-14 rounded-full border opacity-0 group-hover:opacity-40 translate-x-1 -translate-y-1 transition"
+                  style={{ borderColor: ac }} />
+
+                <span className="absolute w-14 h-14 rounded-full border opacity-0 group-hover:opacity-60 translate-x-2 -translate-y-2 transition"
+                  style={{ borderColor: ac }} />
+
+                {/* Icon circle */}
+                <div
+                  className="w-14 h-14 flex items-center justify-center rounded-full 
+            bg-[#0b0b0d] border border-white/10 shadow-inner
+            group-hover:translate-x-2 group-hover:-translate-y-2
+            transition-all duration-300"
+                >
+                  <CheckCircle2
+                    className="w-6 h-6"
+                    style={{ color: ac }}
                   />
                 </div>
 
-                {/* Icon */}
-                <CheckCircle2
-                  className="w-5 h-5 shrink-0 z-10 group-hover:scale-125 transition"
-                  style={{ color: ac }}
-                />
-
                 {/* Text */}
-                <span className="text-sm font-semibold text-white/70 group-hover:text-white z-10">
+                <span className="text-sm text-white/70 group-hover:text-white transition text-center">
                   {a}
                 </span>
 
-                {/* Shine Effect */}
-                <div className="absolute -top-10 -left-10 w-32 h-32 bg-white/10 rotate-45 blur-2xl opacity-0 group-hover:opacity-100 transition duration-700" />
               </div>
+
             </motion.div>
           ))}
+
         </div>
 
         {/* Nearby Landmarks */}
@@ -683,6 +631,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
           </h3>
 
           <div className="flex flex-wrap gap-4">
+
             {branch.nearbyLandmarks.map((lm, i) => (
               <motion.div
                 key={lm}
@@ -693,56 +642,23 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
                   scale: 1.12,
                   boxShadow: `0px 0px 20px ${ac}`,
                 }}
-                className="px-6 py-2.5 rounded-full text-sm font-medium 
-          border border-white/10 text-white/60 
+                className="px-6 py-2.5 rounded-full text-sm font-medium
+          border border-white/10 text-white/60
           bg-[#0b0b0d]/90 backdrop-blur-lg
-          hover:text-white hover:border-white/30 
+          hover:text-white hover:border-white/30
           transition-all duration-300 cursor-pointer"
               >
                 {lm}
               </motion.div>
             ))}
+
           </div>
         </div>
 
       </section>
 
       {/* ── 7. TESTIMONIALS ──────────────────────────────────────────────── */}
-      <section className="py-32" style={{ background: "#000" }}>
-        <div className="max-w-7xl mx-auto px-6">
-          <SectionHeading
-            label="Member Stories"
-            title="REAL RESULTS, REAL PEOPLE"
-            subtitle="Don't take our word for it. Here's what our members say about their journey at this location."
-            accentColor={ac}
-          />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {branch.testimonials.map((t, i) => (
-              <motion.div
-                key={t.name}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="rounded-2xl p-8 border border-white/10 bg-[#09090a] relative flex flex-col"
-              >
-                <div
-                  className="absolute top-6 right-6 text-6xl font-serif leading-none opacity-20"
-                  style={{ color: ac }}
-                >
-                  "
-                </div>
-                <StarRating rating={t.rating} accentColor={ac} />
-                <p className="text-white/65 mt-5 leading-relaxed text-sm flex-1">"{t.review}"</p>
-                <div className="mt-6 pt-6 border-t border-white/10">
-                  <p className="font-black">{t.name}</p>
-                  <p className="text-xs text-white/40 uppercase tracking-widest mt-1">{t.duration}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <BranchTestimonial branch={branch} ac={ac} />
 
       {/* ── 8. MAP ───────────────────────────────────────────────────────── */}
       <section className="py-32 max-w-7xl mx-auto px-6">
