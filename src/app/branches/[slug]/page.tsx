@@ -135,7 +135,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
                 transition={{ delay: 0.9 }}
                 className="flex flex-wrap gap-4"
               >
-                <Link
+                {/* <Link
                   href={`https://wa.me/${branch.whatsapp.replace(/[^0-9]/g, "")}`}
                   target="_blank"
                   className="group flex items-center gap-3 px-8 py-5 font-black uppercase tracking-[3px] text-sm transition-all duration-300 active:scale-95"
@@ -144,7 +144,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
                   <MessageCircle className="w-5 h-5" />
                   WhatsApp Us
                   <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                </Link>
+                </Link> */}
                 <Link
                   href="/pricing"
                   className="flex items-center gap-3 px-8 py-5 font-black uppercase tracking-[3px] text-sm transition-all duration-300 border-2 hover:border-opacity-60"
@@ -152,6 +152,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
                 >
                   View Pricing
                 </Link>
+
               </motion.div>
             </div>
 
@@ -484,10 +485,10 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group relative rounded-2xl p-6 bg-gradient-to-b from-[#0a0a0c] to-[#050506] border border-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+                className="group relative rounded-2xl p-6 bg-linear-to-b from-[#0a0a0c] to-[#050506] border border-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-2 overflow-hidden"
               >
                 {/* Animated gradient background on hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-[rgba(230,126,34,0.05)] via-transparent to-transparent" />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-linear-to-br from-[rgba(230,126,34,0.05)] via-transparent to-transparent" />
 
                 {/* Glow orb behind avatar */}
                 <div
@@ -516,13 +517,13 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
                     }}
                   >
                     {/* Shine effect */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-linear-to-tr from-white/0 via-white/10 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                     <span style={{ color: ac }}>{t.name.charAt(0)}</span>
                   </div>
                 </div>
 
                 {/* Name with gradient text */}
-                <h3 className="font-black text-xl mb-1 text-center bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
+                <h3 className="font-black text-xl mb-1 text-center bg-linear-to-r from-white to-white/70 bg-clip-text text-transparent">
                   {t.name}
                 </h3>
 
@@ -672,7 +673,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="rounded-[2rem] overflow-hidden border"
+          className="rounded-4xl overflow-hidden border"
           style={{ borderColor: `rgba(${acRgb},0.2)` }}
         >
           <iframe

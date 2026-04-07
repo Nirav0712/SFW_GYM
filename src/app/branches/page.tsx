@@ -26,7 +26,7 @@ export default function BranchesPage() {
             backgroundSize: "60px 60px",
           }}
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black via-black/80 to-black z-0" />
+        <div className="absolute top-0 left-0 w-full h-full bg-linear-to-b from-black via-black/80 to-black z-0" />
 
         {/* Floating orbs */}
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse" />
@@ -103,7 +103,7 @@ export default function BranchesPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group relative rounded-[2rem] overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-500 bg-[#09090a]"
+              className="group relative rounded-4xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-500 bg-[#09090a]"
             >
               {/* Top gradient accent */}
               <div
@@ -113,7 +113,7 @@ export default function BranchesPage() {
 
               {/* Glow effect on hover */}
               <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-3xl rounded-[2rem]"
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-3xl rounded-4xl"
                 style={{ background: `radial-gradient(circle at 30% 30%, rgba(${branch.accentColorRgb},0.08), transparent 70%)` }}
               />
 
