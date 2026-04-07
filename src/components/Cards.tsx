@@ -12,12 +12,7 @@ import {
   CheckCircle2,
   ArrowRight
 } from "lucide-react";
-{/* <SectionHeading
-                    label="World-Class Facilities"
-                    title="WHAT SETS US APART"
-                     ${branch.name}.`}
-                    accentColor={ac}
-                /> */}
+
 
 const Services = () => {
   const servicesData = [

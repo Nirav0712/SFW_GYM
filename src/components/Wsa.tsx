@@ -238,12 +238,12 @@ const Wsa: React.FC<WsaProps> = ({ branch, ac, acRgb }) => {
                             )} */}
 
                             {/* CTA */}
-                            <button
+                            {/* <button
                                 className="mt-6 flex items-center gap-2 border px-6 py-2 text-sm font-bold uppercase tracking-widest transition"
                                 style={{ borderColor: ac, color: ac }}
                             >
                                 Explore <ArrowRight size={16} />
-                            </button>
+                            </button> */}
 
                             {/* Hover Slant Effect */}
                             <div

@@ -17,8 +17,8 @@ const plans = [
       { name: "Standard Locker Room", included: true },
       { name: "Personal Trainer Referral", included: true },
       { name: "Free Initial Assessment", included: true },
-      { name: "Yoga Classes", included: false },
-      { name: "Diet Consulting", included: false },
+      { name: "Yoga Classes", included: true },
+      { name: "Diet Consulting", included: true },
     ],
     popular: false,
     color: "white/5",
@@ -36,7 +36,7 @@ const plans = [
       { name: "Unlimited Yoga Classes", included: true },
       { name: "Basic Diet Consulting", included: true },
     ],
-    popular: true,
+    popular: false,
     color: "primary",
   },
   {
@@ -98,13 +98,12 @@ export default function PricingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className={`relative glass p-12 rounded-[4rem] group border-white/5 flex flex-col h-full transform transition-all hover:scale-105 ${
-                p.popular ? "border-primary/50 shadow-[0_0_80px_rgba(121,181,55,0.2)]" : "hover:border-white/20"
-              }`}
+              className={`relative glass p-12 rounded-[4rem] group border-white/5 flex flex-col h-full transform transition-all hover:scale-105 ${p.popular ? "border-primary/50 shadow-[0_0_80px_rgba(121,181,55,0.2)]" : "hover:border-white/20"
+                }`}
             >
               {p.popular && (
                 <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-white font-black text-sm px-8 py-3 rounded-full uppercase tracking-widest shadow-[0_0_30px_rgba(121,181,55,0.5)]">
-                   Most Popular
+                  Most Popular
                 </div>
               )}
 
@@ -134,9 +133,8 @@ export default function PricingPage() {
                 ))}
               </div>
 
-              <button className={`w-full py-6 rounded-3xl font-black text-xl transition-all shadow-xl flex items-center justify-center gap-3 ${
-                p.popular ? "bg-primary text-white hover:bg-primary/80" : "bg-white text-black hover:bg-primary hover:text-white"
-              }`}>
+              <button className={`w-full py-6 rounded-3xl font-black text-xl transition-all shadow-xl flex items-center justify-center gap-3 ${p.popular ? "bg-primary text-white hover:bg-primary/80" : "bg-white text-black hover:bg-primary hover:text-white"
+                }`}>
                 CHOOSE PLAN
                 <ArrowRight className="w-6 h-6" />
               </button>
@@ -148,13 +146,13 @@ export default function PricingPage() {
       {/* Guarantee Section */}
       <section className="py-24 px-4">
         <div className="max-w-4xl mx-auto bg-secondary p-12 rounded-[4rem] text-center space-y-10 border border-white/5 relative overflow-hidden">
-           <ShieldCheck className="w-32 h-32 text-primary opacity-10 absolute -left-10 top-0 -rotate-12" />
-           <Crown className="w-32 h-32 text-primary opacity-10 absolute -right-10 bottom-0 rotate-12" />
-           
-           <h4 className="text-3xl font-black font-outfit">100% SATISFACTION GUARANTEED</h4>
-           <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto">
-             Try our gym for 7 days. If you're not completely satisfied with our facility or trainers, we'll provide a full refund of your membership fees. No questions asked.
-           </p>
+          <ShieldCheck className="w-32 h-32 text-primary opacity-10 absolute -left-10 top-0 -rotate-12" />
+          <Crown className="w-32 h-32 text-primary opacity-10 absolute -right-10 bottom-0 rotate-12" />
+
+          <h4 className="text-3xl font-black font-outfit">100% SATISFACTION GUARANTEED</h4>
+          <p className="text-white/60 text-lg leading-relaxed max-w-2xl mx-auto">
+            Try our gym for 7 days. If you're not completely satisfied with our facility or trainers, we'll provide a full refund of your membership fees. No questions asked.
+          </p>
         </div>
       </section>
 

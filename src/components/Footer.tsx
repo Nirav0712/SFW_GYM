@@ -106,7 +106,7 @@ export default function Footer() {
 
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-white/40 text-sm font-inter">
-            © {new Date().getFullYear()} SFW Gym. All rights reserved. · 4 Locations across Ahmedabad.
+            © {new Date().getFullYear()} SFW Gym. All rights reserved. · 2   Locations across Ahmedabad.
           </p>
           <div className="flex gap-8 text-xs font-inter text-white/40">
             <Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link>
