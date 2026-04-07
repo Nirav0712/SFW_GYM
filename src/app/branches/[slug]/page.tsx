@@ -450,7 +450,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
 
 
       {/* ── 5. TRAINERS ──────────────────────────────────────────────────── */}
-      <section className="py-32" style={{ background: "#000" }}>
+      {/* <section className="py-32" style={{ background: "#000" }}>
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             label="Expert Coaching Staff"
@@ -468,7 +468,7 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
                 transition={{ delay: i * 0.1 }}
                 className="group text-center rounded-2xl p-8 border border-white/10 hover:border-white/20 bg-[#09090a] transition-all duration-300"
               >
-                {/* Avatar */}
+               
                 <div
                   className="w-20 h-20 rounded-full mx-auto mb-5 flex items-center justify-center text-2xl font-black font-outfit transition-transform duration-300 group-hover:scale-110"
                   style={{ background: `rgba(${acRgb},0.15)`, border: `2px solid rgba(${acRgb},0.3)`, color: ac }}
@@ -482,10 +482,107 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
             ))}
           </div>
         </div>
+      </section> */}
+
+      <section className="py-32" style={{ background: "#000" }}>
+        <div className="max-w-7xl mx-auto px-6">
+          <SectionHeading
+            label="Expert Coaching Staff"
+            title="MEET YOUR COACHES"
+            subtitle={`Hand-picked, certified professionals who live and breathe fitness. Your results are their mission at SFW ${branch.name}.`}
+            accentColor={ac}
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {branch.trainers.map((t, i) => (
+              <motion.div
+                key={t.name}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group relative rounded-2xl p-6 bg-gradient-to-b from-[#0a0a0c] to-[#050506] border border-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+              >
+                {/* Animated gradient background on hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-[rgba(230,126,34,0.05)] via-transparent to-transparent" />
+
+                {/* Glow orb behind avatar */}
+                <div
+                  className="absolute w-32 h-32 rounded-full blur-3xl -top-10 -left-10 transition-opacity duration-500 opacity-0 group-hover:opacity-60"
+                  style={{ background: `radial-gradient(circle, rgba(${acRgb},0.3), transparent)` }}
+                />
+
+                {/* Avatar Container with Creative Ring Design */}
+                <div className="relative mb-5 flex justify-center">
+                  {/* Pulsing ring background */}
+                  <div
+                    className="absolute w-24 h-24 rounded-full animate-pulse opacity-20 group-hover:opacity-40 transition-opacity duration-500"
+                    style={{ background: `radial-gradient(circle, ${ac}, transparent 70%)` }}
+                  />
+
+                  {/* Rotating border ring */}
+                  <div className="absolute w-24 h-24 rounded-full border-2 border-dashed animate-spin-slow" style={{ borderColor: `${ac}40` }} />
+
+                  {/* Avatar circle with gradient and shine */}
+                  <div
+                    className="relative w-20 h-20 rounded-full flex items-center justify-center text-3xl font-black font-outfit transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl overflow-hidden"
+                    style={{
+                      background: `linear-gradient(135deg, rgba(${acRgb},0.2), rgba(${acRgb},0.05))`,
+                      border: `2px solid ${ac}`,
+                      boxShadow: `0 0 20px rgba(${acRgb},0.2)`
+                    }}
+                  >
+                    {/* Shine effect */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                    <span style={{ color: ac }}>{t.name.charAt(0)}</span>
+                  </div>
+                </div>
+
+                {/* Name with gradient text */}
+                <h3 className="font-black text-xl mb-1 text-center bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
+                  {t.name}
+                </h3>
+
+                {/* Specialization badge with creative styling */}
+                <div className="flex justify-center mb-3">
+                  <span
+                    className="text-xs font-semibold px-3 py-1 rounded-full tracking-wide backdrop-blur-sm"
+                    style={{
+                      background: `rgba(${acRgb},0.12)`,
+                      color: ac,
+                      border: `1px solid rgba(${acRgb},0.25)`
+                    }}
+                  >
+                    {t.specialization}
+                  </span>
+                </div>
+
+                {/* Experience with icon and progress bar style */}
+                <div className="relative mt-2 mb-1">
+                  <div className="flex items-center justify-center gap-2 text-white/40 text-xs uppercase tracking-widest">
+                    <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    <span>{t.experience} Experience</span>
+                  </div>
+                  {/* Decorative line that expands on hover */}
+                  <div className="h-[2px] w-12 mx-auto mt-2 rounded-full transition-all duration-500 group-hover:w-20" style={{ background: `linear-gradient(90deg, ${ac}, transparent)` }} />
+                </div>
+
+                {/* Hover reveal micro-badge */}
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                  <div className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-white/5 backdrop-blur-sm" style={{ color: ac }}>
+                    Book Session →
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ── 6. AMENITIES ─────────────────────────────────────────────────── */}
-      <section className="py-32 max-w-7xl mx-auto px-6">
+      {/* <section className="py-32 max-w-7xl mx-auto px-6">
         <SectionHeading
           label="Member Facilities"
           title="EVERY COMFORT, COVERED"
@@ -508,7 +605,6 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
           ))}
         </div>
 
-        {/* Nearby Landmarks */}
         <div className="mt-16">
           <h3 className="font-black text-2xl mb-6 flex items-center gap-3">
             <MapPin className="w-6 h-6" style={{ color: ac }} />
@@ -522,6 +618,93 @@ export default function BranchPage({ params }: { params: Promise<{ slug: string 
             ))}
           </div>
         </div>
+      </section> */}
+
+      <section className="py-28 max-w-7xl mx-auto px-6">
+
+        <SectionHeading
+          label="Member Facilities"
+          title="EVERY COMFORT, COVERED"
+          subtitle="From locker rooms to premium recovery suites, SFW ensures your entire gym experience — not just the workout — is world-class."
+          accentColor={ac}
+        />
+
+        {/* Amenities */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-14">
+          {branch.amenities.map((a, i) => (
+            <motion.div
+              key={a}
+              initial={{ opacity: 0, y: 40, scale: 0.85 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ delay: i * 0.07, type: "spring", stiffness: 120 }}
+              whileHover={{
+                rotateX: 6,
+                rotateY: -6,
+                scale: 1.06,
+              }}
+              className="group relative p-[1px] rounded-2xl bg-gradient-to-br from-white/20 via-transparent to-white/10"
+            >
+              {/* Inner Box */}
+              <div className="relative flex items-center gap-3 rounded-2xl p-5 
+        bg-[#0b0b0d]/90 backdrop-blur-xl border border-white/10
+        overflow-hidden transition-all duration-300">
+
+                {/* Animated Glow */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
+                  <div
+                    className="absolute inset-0 blur-2xl"
+                    style={{ backgroundColor: ac, opacity: 0.25 }}
+                  />
+                </div>
+
+                {/* Icon */}
+                <CheckCircle2
+                  className="w-5 h-5 shrink-0 z-10 group-hover:scale-125 transition"
+                  style={{ color: ac }}
+                />
+
+                {/* Text */}
+                <span className="text-sm font-semibold text-white/70 group-hover:text-white z-10">
+                  {a}
+                </span>
+
+                {/* Shine Effect */}
+                <div className="absolute -top-10 -left-10 w-32 h-32 bg-white/10 rotate-45 blur-2xl opacity-0 group-hover:opacity-100 transition duration-700" />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Nearby Landmarks */}
+        <div className="mt-24">
+          <h3 className="font-extrabold text-2xl mb-8 flex items-center gap-3">
+            <MapPin className="w-6 h-6" style={{ color: ac }} />
+            Nearby Landmarks
+          </h3>
+
+          <div className="flex flex-wrap gap-4">
+            {branch.nearbyLandmarks.map((lm, i) => (
+              <motion.div
+                key={lm}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.05 }}
+                whileHover={{
+                  scale: 1.12,
+                  boxShadow: `0px 0px 20px ${ac}`,
+                }}
+                className="px-6 py-2.5 rounded-full text-sm font-medium 
+          border border-white/10 text-white/60 
+          bg-[#0b0b0d]/90 backdrop-blur-lg
+          hover:text-white hover:border-white/30 
+          transition-all duration-300 cursor-pointer"
+              >
+                {lm}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
       </section>
 
       {/* ── 7. TESTIMONIALS ──────────────────────────────────────────────── */}
