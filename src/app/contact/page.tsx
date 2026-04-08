@@ -98,13 +98,13 @@ export default function ContactPage() {
             <div className="space-y-6">
               <h4 className="text-xl font-bold font-outfit">Follow Our Journey</h4>
               <div className="flex gap-4">
-                 {[Camera, Share2, MessageSquare].map((social, i) => (
-                   <Link key={i} href="#" className="p-4 bg-white/5 hover:bg-primary rounded-2xl transition-all group">
-                     {i === 0 && <Camera className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />}
-                     {i === 1 && <Share2 className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />}
-                     {i === 2 && <MessageSquare className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />}
-                   </Link>
-                 ))}
+                {[Camera, Share2, MessageSquare].map((social, i) => (
+                  <Link key={i} href="#" className="p-4 bg-white/5 hover:bg-primary rounded-2xl transition-all group">
+                    {i === 0 && <Camera className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />}
+                    {i === 1 && <Share2 className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />}
+                    {i === 2 && <MessageSquare className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
@@ -116,41 +116,41 @@ export default function ContactPage() {
             viewport={{ once: true }}
             className="glass p-12 md:p-16 rounded-[4rem] border-white/10 relative overflow-hidden"
           >
-             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-3xl -z-10" />
-             <h4 className="text-3xl font-black font-outfit mb-10">SEND US A MESSAGE</h4>
-             
-             <form className="space-y-6">
-               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                 <div className="space-y-2">
-                   <label className="text-xs font-black uppercase tracking-widest text-white/40 ml-4">Full Name</label>
-                   <input type="text" placeholder="John Doe" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:border-primary focus:outline-none transition-all" />
-                 </div>
-                 <div className="space-y-2">
-                   <label className="text-xs font-black uppercase tracking-widest text-white/40 ml-4">Email Address</label>
-                   <input type="email" placeholder="john@example.com" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:border-primary focus:outline-none transition-all" />
-                 </div>
-               </div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-3xl -z-10" />
+            <h4 className="text-3xl font-black font-outfit mb-10">SEND US A MESSAGE</h4>
 
-               <div className="space-y-2">
-                 <label className="text-xs font-black uppercase tracking-widest text-white/40 ml-4">Subject</label>
-                 <select className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:border-primary focus:outline-none transition-all appearance-none cursor-pointer">
-                   <option className="bg-black">General Inquiry</option>
-                   <option className="bg-black">Membership Plans</option>
-                   <option className="bg-black">Personal Training</option>
-                   <option className="bg-black">Free Trial Request</option>
-                 </select>
-               </div>
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-xs font-black uppercase tracking-widest text-white/40 ml-4">Full Name</label>
+                  <input type="text" placeholder="John Doe" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:border-primary focus:outline-none transition-all" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-black uppercase tracking-widest text-white/40 ml-4">Email Address</label>
+                  <input type="email" placeholder="john@example.com" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:border-primary focus:outline-none transition-all" />
+                </div>
+              </div>
 
-               <div className="space-y-2">
-                 <label className="text-xs font-black uppercase tracking-widest text-white/40 ml-4">Message</label>
-                 <textarea rows={5} placeholder="Tell us about your fitness goals..." className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:border-primary focus:outline-none transition-all resize-none" />
-               </div>
+              <div className="space-y-2">
+                <label className="text-xs font-black uppercase tracking-widest text-white/40 ml-4">Subject</label>
+                <select className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:border-primary focus:outline-none transition-all appearance-none cursor-pointer">
+                  <option className="bg-black">General Inquiry</option>
+                  <option className="bg-black">Membership Plans</option>
+                  <option className="bg-black">Personal Training</option>
+                  <option className="bg-black">Free Trial Request</option>
+                </select>
+              </div>
 
-               <button className="w-full bg-primary hover:bg-primary/90 text-white font-black py-6 rounded-2xl text-lg flex items-center justify-center gap-3 shadow-[0_0_50px_rgba(121,181,55,0.3)] hover:shadow-[0_0_60px_rgba(121,181,55,0.5)] transition-all transform hover:-translate-y-1">
-                 SEND MESSAGE
-                 <Send className="w-5 h-5" />
-               </button>
-             </form>
+              <div className="space-y-2">
+                <label className="text-xs font-black uppercase tracking-widest text-white/40 ml-4">Message</label>
+                <textarea rows={5} placeholder="Tell us about your fitness goals..." className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:border-primary focus:outline-none transition-all resize-none" />
+              </div>
+
+              <button className="w-full bg-primary hover:bg-primary/90 text-white font-black py-6 rounded-2xl text-lg flex items-center justify-center gap-3 shadow-[0_0_50px_rgba(121,181,55,0.3)] hover:shadow-[0_0_60px_rgba(121,181,55,0.5)] transition-all transform hover:-translate-y-1">
+                SEND MESSAGE
+                <Send className="w-5 h-5" />
+              </button>
+            </form>
           </motion.div>
         </div>
       </section>
@@ -159,17 +159,17 @@ export default function ContactPage() {
       <section className="py-24 px-4">
         <div className="max-w-7xl mx-auto h-[500px] glass rounded-[4rem] overflow-hidden border-8 border-white/5 relative group">
           <div className="absolute inset-0 bg-black/60 flex items-center justify-center z-10 group-hover:bg-black/40 transition-colors pointer-events-none">
-             <div className="text-center space-y-4">
-               <div className="bg-primary p-6 rounded-4xl inline-block animate-bounce shadow-2xl">
-                 <MapPin className="w-12 h-12 text-white" />
-               </div>
-               <h3 className="text-3xl font-black font-outfit uppercase">Visit Our Facility</h3>
-               <p className="text-white/60 font-bold uppercase tracking-widest text-sm">Hirawadi, Ahmedabad</p>
-             </div>
+            <div className="text-center space-y-4">
+              <div className="bg-primary p-6 rounded-4xl inline-block animate-bounce shadow-2xl">
+                <MapPin className="w-12 h-12 text-white" />
+              </div>
+              <h3 className="text-3xl font-black font-outfit uppercase">Visit Our Facility</h3>
+              <p className="text-white/60 font-bold uppercase tracking-widest text-sm">Hirawadi, Ahmedabad</p>
+            </div>
           </div>
           {/* Map placeholder bg */}
           <div className="absolute inset-0 grayscale opacity-40">
-             <Image src="/images/hero.png" alt="Map" fill className="object-cover" />
+            <Image src="/images/hero.png" alt="Map" fill className="object-cover" />
           </div>
         </div>
       </section>

@@ -234,23 +234,23 @@ export const branches: Branch[] = [
         name: "Amit Desai",
         image: "/images/about-page.jpg",
         review:
-          "I've been a member since 2018 and I can say without doubt — SFW Hirawadi changed my life. Lost 22kg in 6 months and ran my first half-marathon. The coaches here genuinely care about your progress.",
+          "I've been part of this gym for years, and it's been a complete transformation for me. I managed to lose over 20 kg within a few months and even pushed myself to achieve fitness goals I never thought possible. What truly stands out is how dedicated the coaches are—they genuinely support, guide, and care about your progress every step of the way.",
         rating: 5,
         duration: "Member since 2018",
       },
       {
-        name: "Amit Desai",
+        name: "jinal Desai",
         image: "/images/image.png",
         review:
-          "I've been a member since 2018 and I can say without doubt — SFW Hirawadi changed my life. Lost 22kg in 6 months and ran my first half-marathon. The coaches here genuinely care about your progress.",
+          "Being a member of this gym has been one of the best decisions I've made. I saw a major transformation in just a few months, shedding significant weight and building the confidence to take on new fitness challenges. The trainers here aren't just instructors—they truly invest in your journey and make sure you stay on track.",
         rating: 5,
         duration: "Member since 2026",
       },
       {
-        name: "Amit Desai",
+        name: "Bharti Desai",
         image: "/images/image.png",
         review:
-          "I've been a member since 2018 and I can say without doubt — SFW Hirawadi changed my life. Lost 22kg in 6 months and ran my first half-marathon. The coaches here genuinely care about your progress.",
+          "Joining this gym completely changed my fitness journey. In a short time, I achieved results I never thought possible—losing weight, building stamina, and pushing my limits. What makes it special is the coaching team—they're always there to motivate, guide, and genuinely care about your progress..",
         rating: 5,
         duration: "Member since 2017",
       },
@@ -465,9 +465,33 @@ export const branches: Branch[] = [
         name: "Kavya Modi",
         image: "/images/image.png",
         review:
-          "The express 45-minute HIIT sessions are a lifesaver! I have a 9-to-5 job and this is the only gym where I can walk in at 7 PM, crush a full workout, and be home by 8. Absolutely love it.",
+          "This gym makes staying consistent so easy! Their 45-minute HIIT sessions are perfectly structured—I can come in after work, get a solid sweat, and wrap up quickly without compromising on results. It’s fast, effective, and keeps me motivated every single day.",
         rating: 5,
         duration: "Member since 2022",
+      },
+      {
+        name: "jinal Modi",
+        image: "/images/image.png",
+        review:
+          "The express 45-minute HIIT sessions are a lifesaver! I have a 9-to-5 job and this is the only gym where I can walk in at 7 PM, crush a full workout, and be home by 8. Absolutely love it.",
+        rating: 5,
+        duration: "Member since 2023",
+      },
+      {
+        name: "Kavya Modi",
+        image: "/images/image.png",
+        review:
+          "This gym’s 45-minute HIIT sessions are exactly what I needed! After a long workday, I can step in, stay focused, and complete a full, high-intensity workout without wasting time. The energy, setup, and efficiency make it my go-to place to stay fit despite a busy schedule.",
+        rating: 5,
+        duration: "Member since 2024",
+      },
+      {
+        name: "Kavya Modi",
+        image: "/images/image.png",
+        review:
+          "Balancing work and fitness used to be tough, but this gym changed that. The 45-minute HIIT sessions are quick, intense, and super effective—I can walk in after my shift, power through a full workout, and still have time to relax at home. Total win for my routine!",
+        rating: 5,
+        duration: "Member since 2025",
       },
     ],
     gallery: ["/images/hero.png", "/images/athlete.png"],
@@ -512,6 +536,7 @@ export const branches: Branch[] = [
   //     saturday: "6:00 AM – 9:30 PM",
   //     sunday: "6:30 AM – 8:00 PM",
   //   },
+
   //   features: [
   //     {
   //       title: "Performance Lab",
