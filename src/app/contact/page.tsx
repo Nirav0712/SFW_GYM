@@ -98,13 +98,27 @@ export default function ContactPage() {
             <div className="space-y-6">
               <h4 className="text-xl font-bold font-outfit">Follow Our Journey</h4>
               <div className="flex gap-4">
-                {[Camera, Share2, MessageSquare].map((social, i) => (
-                  <Link key={i} href="#" className="p-4 bg-white/5 hover:bg-primary rounded-2xl transition-all group">
-                    {i === 0 && <Camera className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />}
-                    {i === 1 && <Share2 className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />}
-                    {i === 2 && <MessageSquare className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />}
-                  </Link>
-                ))}
+                <Link 
+                  href="https://www.youtube.com/@SFWTHEGYM" 
+                  target="_blank"
+                  className="p-4 bg-white/5 hover:bg-primary rounded-2xl transition-all text-white/50 hover:text-white group"
+                >
+                  <i className="fa-brands fa-youtube w-6 h-6 group-hover:scale-110 transition-transform"></i>
+                </Link>
+                <Link 
+                  href="https://www.facebook.com/SFWGYM/" 
+                  target="_blank"
+                  className="p-4 bg-white/5 hover:bg-primary rounded-2xl transition-all text-white/50 hover:text-white group"
+                >
+                  <i className="fa-brands fa-facebook-f w-6 h-6 group-hover:scale-110 transition-transform"></i>
+                </Link>
+                <Link 
+                  href="https://www.instagram.com/sfwthegym/" 
+                  target="_blank"
+                  className="p-4 bg-white/5 hover:bg-primary rounded-2xl transition-all text-white/50 hover:text-white group"
+                >
+                  <i className="fa-brands fa-instagram w-6 h-6 group-hover:scale-110 transition-transform"></i>
+                </Link>
               </div>
             </div>
           </div>

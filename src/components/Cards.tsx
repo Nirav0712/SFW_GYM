@@ -96,14 +96,14 @@ const Services = () => {
                 </div>
               ))}
             </div>
-
+            {/* 
             <motion.button
               className="action-button"
               whileHover={{ x: 10 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               JOIN NOW <ArrowRight size={18} />
-            </motion.button>
+            </motion.button> */}
 
             {/* Slanted Hover Reveal */}
             <div className="hover-slant" />

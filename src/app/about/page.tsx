@@ -36,7 +36,7 @@ export default function AboutPage() {
       <section className="relative h-[60vh] flex items-center pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero.png"
+            src="/hirawadi-images/30.webp"
             alt="About Gym"
             fill
             className="object-cover opacity-40 grayscale blur-sm scale-110"
@@ -96,7 +96,7 @@ export default function AboutPage() {
               <div className="absolute inset-x-10 inset-y-10 border-4 border-primary/20 rounded-[5rem] -rotate-6 z-0" />
               <div className="relative z-10 w-full h-full rounded-[4rem] overflow-hidden border-8 border-white/5 rotate-3 transition-transform hover:rotate-0 duration-500">
                 <Image
-                  src="/images/gym-interior.png" // Using existing for placeholder
+                  src="/hirawadi-images/38.webp"
                   alt="Gym Culture"
                   fill
                   className="object-cover"

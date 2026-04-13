@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="bg-secondary text-white pt-20 pb-10 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Logo + About */}
           <div className="md:col-span-2 space-y-6">
             <Link href="/" className="flex items-center gap-3 group relative">
@@ -28,16 +28,57 @@ export default function Footer() {
               Ahmedabad's fastest-growing gym network. 4 premium locations, 70+ certified trainers, and a community of 3,200+ members transforming their bodies and lives every day.
             </p>
             <div className="flex gap-4">
-              <Link href="#" className="p-3 bg-white/5 hover:bg-primary rounded-full transition-all text-white/50 hover:text-white">
-                <Camera className="w-5 h-5" />
+              <Link
+                href="https://www.youtube.com/@SFWTHEGYM"
+                target="_blank"
+                className="p-3 bg-white/5 hover:bg-primary rounded-full transition-all text-white/50 hover:text-white flex items-center justify-center"
+              >
+                <i className="fa-brands fa-youtube text-lg"></i>
               </Link>
-              <Link href="#" className="p-3 bg-white/5 hover:bg-primary rounded-full transition-all text-white/50 hover:text-white">
-                <Share2 className="w-5 h-5" />
+
+              <Link
+                href="https://www.facebook.com/SFWGYM/"
+                target="_blank"
+                className="p-3 bg-white/5 hover:bg-primary rounded-full transition-all text-white/50 hover:text-white flex items-center justify-center"
+              >
+                <i className="fa-brands fa-facebook-f text-lg"></i>
               </Link>
-              <Link href="#" className="p-3 bg-white/5 hover:bg-primary rounded-full transition-all text-white/50 hover:text-white">
-                <MessageSquare className="w-5 h-5" />
+
+              <Link
+                href="https://www.instagram.com/sfwthegym/"
+                target="_blank"
+                className="p-3 bg-white/5 hover:bg-primary rounded-full transition-all text-white/50 hover:text-white flex items-center justify-center"
+              >
+                <i className="fa-brands fa-instagram text-lg"></i>
               </Link>
             </div>
+            {/* <div className="flex gap-4">
+              <Link
+                href="https://www.youtube.com/@SFWTHEGYM"
+                target="_blank"
+                className="p-3 bg-white/5 hover:bg-primary rounded-full transition-all text-white/50 hover:text-white"
+              >
+                <i className="fa-brands fa-youtube w-5 h-5"></i>
+              </Link>
+
+              <Link
+                href="https://www.facebook.com/SFWGYM/"
+                target="_blank"
+                className="p-3 bg-white/5 hover:bg-primary rounded-full transition-all text-white/50 align-center hover:text-white"
+              >
+                <i className="fa-brands fa-facebook-f w-5 h-5"></i>
+              </Link>
+
+              <Link
+                href="https://www.instagram.com/sfwthegym/"
+                target="_blank"
+                className="p-3 bg-white/5 hover:bg-primary rounded-full transition-all text-white/50 hover:text-white"
+              >
+                <i className="fa-brands fa-instagram w-5 h-5"></i>
+              </Link>
+            </div> */}
+
+
           </div>
 
           {/* Quick Links */}
@@ -49,7 +90,7 @@ export default function Footer() {
               <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
               <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
               <li><Link href="/programs" className="hover:text-primary transition-colors">Our Programs</Link></li>
-              <li><Link href="/pricing" className="hover:text-primary transition-colors">Membership</Link></li>
+              {/* <li><Link href="/pricing" className="hover:text-primary transition-colors">Membership</Link></li> */}
               <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
             </ul>
           </div>
@@ -83,7 +124,7 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
+          {/* <div>
             <h4 className="text-xl font-bold font-outfit mb-8 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-8 after:h-1 after:bg-primary">
               Contact Us
             </h4>
@@ -101,7 +142,7 @@ export default function Footer() {
                 <span>hello@sfwgym.com</span>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">

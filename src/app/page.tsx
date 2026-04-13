@@ -99,7 +99,7 @@ export default function Home() {
             <div className="flex-1 relative">
               <div className="relative z-10 rounded-[4rem] overflow-hidden aspect-square">
                 <Image
-                  src="/images/about-page.jpg"
+                  src="/hirawadi-images/107.webp"
                   alt="Gym Interior"
                   fill
                   className="object-cover"
@@ -174,20 +174,30 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 px-4">
-        <div className="max-w-7xl mx-auto glass rounded-[4rem] p-12 md:p-24 text-center relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 blur-[150px] -z-10" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 blur-[150px] -z-10" />
+      <section className="py-16 lg:py-32 px-4 flex justify-center">
+        <div className="max-w-7xl w-full glass rounded-4xl md:rounded-4xl p-6 md:p-20 text-center relative overflow-hidden flex flex-col items-center">
 
-          <h2 className="text-5xl md:text-7xl font-black font-outfit mb-10 leading-none">
-            READY TO START YOUR <br /> <span className="text-primary italic">TRANSFORMATION?</span>
+          {/* Background blur effects */}
+          <div className="absolute top-0 right-0 w-48 md:w-96 h-48 md:h-96 bg-primary/20 blur-[80px] md:blur-[150px] -z-10" />
+          <div className="absolute bottom-0 left-0 w-48 md:w-96 h-48 md:h-96 bg-primary/10 blur-[80px] md:blur-[150px] -z-10" />
+
+          {/* Heading */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black font-outfit mb-6 md:mb-10 leading-tight">
+            READY TO START YOUR
+            <br className="hidden md:block" />
+            <span className="text-primary italic"> TRANSFORMATION?</span>
           </h2>
-          <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto">
+
+          {/* Description */}
+          <p className="text-base sm:text-lg md:text-xl text-white/60 mb-8 md:mb-12 max-w-xl">
             Get your first month at 50% discount. Offer valid for the next 48 hours for new members.
           </p>
-          <button className="bg-primary hover:bg-primary/90 text-white px-12 py-6 rounded-2xl font-black text-xl shadow-[0_0_50px_rgba(121,181,55,0.4)] transition-all transform hover:scale-110">
+
+          {/* Button */}
+          <button className="bg-primary hover:bg-primary/90 text-white px-8 py-4 md:px-12 md:py-6 rounded-xl md:rounded-2xl font-black text-base md:text-xl shadow-[0_0_50px_rgba(121,181,55,0.4)] transition-all transform hover:scale-105 w-full sm:w-auto">
             CLAIM DISCOUNT NOW
           </button>
+
         </div>
       </section>
 
